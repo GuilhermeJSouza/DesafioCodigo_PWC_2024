@@ -33,6 +33,8 @@
             this.button_Confirmar = new System.Windows.Forms.Button();
             this.label_Endereco = new System.Windows.Forms.Label();
             this.label_Numero = new System.Windows.Forms.Label();
+            this.label_endereco_saida = new System.Windows.Forms.Label();
+            this.label_numero_saida = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label_Instruction
@@ -79,11 +81,31 @@
             this.label_Numero.TabIndex = 4;
             this.label_Numero.Text = "Número:";
             // 
+            // label_endereco_saida
+            // 
+            this.label_endereco_saida.AutoSize = true;
+            this.label_endereco_saida.Location = new System.Drawing.Point(93, 176);
+            this.label_endereco_saida.Name = "label_endereco_saida";
+            this.label_endereco_saida.Size = new System.Drawing.Size(11, 16);
+            this.label_endereco_saida.TabIndex = 5;
+            this.label_endereco_saida.Text = "-";
+            // 
+            // label_numero_saida
+            // 
+            this.label_numero_saida.AutoSize = true;
+            this.label_numero_saida.Location = new System.Drawing.Point(82, 229);
+            this.label_numero_saida.Name = "label_numero_saida";
+            this.label_numero_saida.Size = new System.Drawing.Size(11, 16);
+            this.label_numero_saida.TabIndex = 6;
+            this.label_numero_saida.Text = "-";
+            // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label_numero_saida);
+            this.Controls.Add(this.label_endereco_saida);
             this.Controls.Add(this.label_Numero);
             this.Controls.Add(this.label_Endereco);
             this.Controls.Add(this.button_Confirmar);
@@ -103,6 +125,8 @@
         private System.Windows.Forms.Button button_Confirmar;
         private System.Windows.Forms.Label label_Endereco;
         private System.Windows.Forms.Label label_Numero;
+        private System.Windows.Forms.Label label_endereco_saida;
+        private System.Windows.Forms.Label label_numero_saida;
     }
 }
 

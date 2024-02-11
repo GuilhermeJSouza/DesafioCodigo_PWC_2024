@@ -33,6 +33,9 @@ namespace DesafioCodigo_PWC_2024
                 Console.WriteLine(parte);
             }
 
+            label_endereco_saida.Text = ruaNumero[0];//Atribui o texto à label de saída endereço
+            label_numero_saida.Text = ruaNumero[1];//Atribui o texto à label de saída número
+
             //Console.WriteLine("Teste");
             //Console.WriteLine(enderecoDigitado.Split(' '));
 
