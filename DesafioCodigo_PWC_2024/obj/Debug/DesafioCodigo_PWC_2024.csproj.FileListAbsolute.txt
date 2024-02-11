@@ -1,0 +1,10 @@
+C:\Users\gjds3\Desktop\DesafioCodigo_PWC_2024\DesafioCodigo_PWC_2024\bin\Debug\DesafioCodigo_PWC_2024.exe.config
+C:\Users\gjds3\Desktop\DesafioCodigo_PWC_2024\DesafioCodigo_PWC_2024\bin\Debug\DesafioCodigo_PWC_2024.exe
+C:\Users\gjds3\Desktop\DesafioCodigo_PWC_2024\DesafioCodigo_PWC_2024\bin\Debug\DesafioCodigo_PWC_2024.pdb
+C:\Users\gjds3\Desktop\DesafioCodigo_PWC_2024\DesafioCodigo_PWC_2024\obj\Debug\DesafioCodigo_PWC_2024.csproj.AssemblyReference.cache
+C:\Users\gjds3\Desktop\DesafioCodigo_PWC_2024\DesafioCodigo_PWC_2024\obj\Debug\DesafioCodigo_PWC_2024.Form_Main.resources
+C:\Users\gjds3\Desktop\DesafioCodigo_PWC_2024\DesafioCodigo_PWC_2024\obj\Debug\DesafioCodigo_PWC_2024.Properties.Resources.resources
+C:\Users\gjds3\Desktop\DesafioCodigo_PWC_2024\DesafioCodigo_PWC_2024\obj\Debug\DesafioCodigo_PWC_2024.csproj.GenerateResource.cache
+C:\Users\gjds3\Desktop\DesafioCodigo_PWC_2024\DesafioCodigo_PWC_2024\obj\Debug\DesafioCodigo_PWC_2024.csproj.CoreCompileInputs.cache
+C:\Users\gjds3\Desktop\DesafioCodigo_PWC_2024\DesafioCodigo_PWC_2024\obj\Debug\DesafioCodigo_PWC_2024.exe
+C:\Users\gjds3\Desktop\DesafioCodigo_PWC_2024\DesafioCodigo_PWC_2024\obj\Debug\DesafioCodigo_PWC_2024.pdb
