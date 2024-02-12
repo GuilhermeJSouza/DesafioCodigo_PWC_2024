@@ -21,7 +21,7 @@ namespace DesafioCodigo_PWC_2024
 
         private void button_Confirmar_Click(object sender, EventArgs e)
         {
-            String enderecoDigitado = textBox_Entrada.Text;//Faz a leitura da entrada do usuário
+            String enderecoDigitado = textBox_Entrada.Text.Replace(",", "");//Faz a leitura da entrada do usuário
 
             //##########################################     CASO 1     ########################################################
 
@@ -48,18 +48,29 @@ namespace DesafioCodigo_PWC_2024
 
             //int separadores = enderecoDigitado.IndexOf(" "); // adiciona na posição zero a posição do primeiro retorno de espaço
 
+            //Try
+            int result;
+
             for (int x = enderecoDigitado.IndexOf(" "); x < enderecoDigitado.Length; x++) // Iteração para encontrar todos os espaços da
                                                                           // frase
             {
+
                 //if (enderecoDigitado.Substring(x, x + 1).Equals(" ") && enderecoDigitado.Substring(x + 1, x + 2).ToString() == "2")
-                if (enderecoDigitado[x] == ' ' && enderecoDigitado[x + 1] == '2')
+                if (enderecoDigitado[x] == ' ' && int.TryParse(enderecoDigitado[x + 1].ToString(), out result))
+                //if (enderecoDigitado[x] == ' ' && enderecoDigitado[x + 1] == '0' || enderecoDigitado[x + 1] == '1' || enderecoDigitado[x + 1] == '2')
                 {
-                    endereco[0] = enderecoDigitado.Substring(0, x);
-                    numero[0] = enderecoDigitado.Substring(x + 1, enderecoDigitado.Length-1-x);
+                    endereco[0] = enderecoDigitado.Substring(0, x).Trim();
+                    numero[0] = enderecoDigitado.Substring(x, enderecoDigitado.Length-x).Trim();
+                    break;
+                }
+                else if (enderecoDigitado[x] == ' ' && int.TryParse(enderecoDigitado[x - 1].ToString(), out result))
+                {
+                    numero[0] = enderecoDigitado.Substring(0, x).Trim();
+                    endereco[0] = enderecoDigitado.Substring(x, enderecoDigitado.Length - x).Trim();
                     break;
                 }
             }
-            label_endereco_saida.Text = endereco[0];
+            label_endereco_saida.Text = endereco[0].Replace(",", "");
             label_numero_saida.Text = numero[0];
         }
     }
