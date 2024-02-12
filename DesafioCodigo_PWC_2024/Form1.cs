@@ -19,51 +19,24 @@ namespace DesafioCodigo_PWC_2024
             InitializeComponent();
         }
 
-        private void button_Confirmar_Click(object sender, EventArgs e)
+        private void button_Confirmar_Click(object sender, EventArgs e)//Evento do click do botão
         {
             String enderecoDigitado = textBox_Entrada.Text.Replace(",", "");//Faz a leitura da entrada do usuário
 
-            //##########################################       CASO 1      ########################################################
+            int y = enderecoDigitado.LastIndexOf(" No ");//Procura 'No' na entrada do usuário e passa para a variávevl y a posição
 
-            /*string[] ruaNumero = enderecoDigitado.Split(' ');// Dividindo a string no espaço em branco e atribuindo à um array
-
-            String rua = ruaNumero[0];
-
-            label_endereco_saida.Text = rua.Replace(",", "");//Atribui o texto à label de saída endereço removendo possíveis vírgulas
-            
-            label_numero_saida.Text = ruaNumero[1];//Atribui o texto à label de saída número*/
-
-            //##########################################    CASOS 2 e 3   #########################################################
-
-            int y = enderecoDigitado.LastIndexOf(" No ");
-
-            //Console.WriteLine("teste");
-            //Console.WriteLine(y);//Retorna -1 quando não tem No
-
-            //MessageBox.Show(y.ToString());
-
-            //enderecoDigitado.Split(' ');
-            //string[] ruaNumero = new string[2];
-            //ruaNumero = enderecoDigitado.Split(' ');
-
-            //List<String> separadores = new List<String>();//Declara uma lista para as posições onde tem espaço na string de entrada
-
-            string[] endereco = new string[1];
-            string[] numero = new string[1];
-
-            //separadores.Add(0); // Inicia a lista
-
-            //int separadores = enderecoDigitado.IndexOf(" "); // adiciona na posição zero a posição do primeiro retorno de espaço
+            string[] endereco = new string[1];//declaração da lista string do endereço
+            string[] numero = new string[1];//declaração da lista string do número
 
             try
             {
 
-                int result;
+                int result;//declaração da variável result o resultado da entrada do usuário convertido em número
 
-                if (y > 0)
+                if (y > 0)//Condição se houver No na string de entrada do usuário
                 {
-                    endereco[0] = enderecoDigitado.Substring(0, y).Trim();
-                    numero[0] = enderecoDigitado.Substring(y, enderecoDigitado.Length - y).Trim();
+                    endereco[0] = enderecoDigitado.Substring(0, y).Trim();//divide a string e coloca na lista endereco
+                    numero[0] = enderecoDigitado.Substring(y, enderecoDigitado.Length - y).Trim();//divide a string e coloca na lista numero
                 }
                 /*else if (y == 0)
                 {
@@ -76,37 +49,35 @@ namespace DesafioCodigo_PWC_2024
                                                                                                   // frase
                     {
 
-                        //if (enderecoDigitado.Substring(x, x + 1).Equals(" ") && enderecoDigitado.Substring(x + 1, x + 2).ToString() == "2")
-                        if (enderecoDigitado[x] == ' ' && int.TryParse(enderecoDigitado[x + 1].ToString(), out result))
-                        //if (enderecoDigitado[x] == ' ' && enderecoDigitado[x + 1] == '0' || enderecoDigitado[x + 1] == '1' || enderecoDigitado[x + 1] == '2')
+                        if (enderecoDigitado[x] == ' ' && int.TryParse(enderecoDigitado[x + 1].ToString(), out result))//condição se houver um espaço e próximo elemnto for um número
+                        
                         {
                             endereco[0] = enderecoDigitado.Substring(0, x).Trim();
                             numero[0] = enderecoDigitado.Substring(x, enderecoDigitado.Length - x).Trim();
-                            break;
+                            break;//interrompe o for
                         }
                         else if (enderecoDigitado[x] == ' ' && int.TryParse(enderecoDigitado[x - 1].ToString(), out result))
                         {
                             numero[0] = enderecoDigitado.Substring(0, x).Trim();
                             endereco[0] = enderecoDigitado.Substring(x, enderecoDigitado.Length - x).Trim();
-                            break;
+                            break;//interrompe o for
                         }
                     }
                 }
-
-                label_endereco_saida.Text = endereco[0].Replace(",", "");
-                label_numero_saida.Text = numero[0];
             }
 
             catch
             {
                 MessageBox.Show("Endereço inválido!");
 
-                endereco[0] = "";
-                numero[0] = "";
+                endereco[0] = "";//Limpa em caso de erro
+                numero[0] = "";//Limap em caso de erro
 
                 //textBox_Entrada.Text = string.Empty;
             }
 
+            label_endereco_saida.Text = endereco[0].Replace(",", "");
+            label_numero_saida.Text = numero[0];
 
         }
     }
