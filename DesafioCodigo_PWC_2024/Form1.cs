@@ -23,7 +23,7 @@ namespace DesafioCodigo_PWC_2024
         {
             String enderecoDigitado = textBox_Entrada.Text.Replace(",", "");//Faz a leitura da entrada do usuário
 
-            //##########################################     CASO 1     ########################################################
+            //##########################################       CASO 1      ########################################################
 
             /*string[] ruaNumero = enderecoDigitado.Split(' ');// Dividindo a string no espaço em branco e atribuindo à um array
 
@@ -33,7 +33,14 @@ namespace DesafioCodigo_PWC_2024
             
             label_numero_saida.Text = ruaNumero[1];//Atribui o texto à label de saída número*/
 
-            //##########################################     CASO 2     ###################################################################
+            //##########################################    CASOS 2 e 3   #########################################################
+
+            int y = enderecoDigitado.LastIndexOf(" No ");
+
+            //Console.WriteLine("teste");
+            //Console.WriteLine(y);//Retorna -1 quando não tem No
+
+            MessageBox.Show(y.ToString());
 
             //enderecoDigitado.Split(' ');
             //string[] ruaNumero = new string[2];
