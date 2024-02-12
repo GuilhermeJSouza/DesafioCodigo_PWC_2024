@@ -40,7 +40,7 @@ namespace DesafioCodigo_PWC_2024
             //Console.WriteLine("teste");
             //Console.WriteLine(y);//Retorna -1 quando não tem No
 
-            MessageBox.Show(y.ToString());
+            //MessageBox.Show(y.ToString());
 
             //enderecoDigitado.Split(' ');
             //string[] ruaNumero = new string[2];
@@ -58,25 +58,34 @@ namespace DesafioCodigo_PWC_2024
             //Try
             int result;
 
-            for (int x = enderecoDigitado.IndexOf(" "); x < enderecoDigitado.Length; x++) // Iteração para encontrar todos os espaços da
-                                                                          // frase
+            if (y > 0)
             {
+                endereco[0] = enderecoDigitado.Substring(0, y).Trim();
+                numero[0] = enderecoDigitado.Substring(y, enderecoDigitado.Length - y).Trim();
+            }
+            else if (y == -1)
+            {
+                for (int x = enderecoDigitado.IndexOf(" "); x < enderecoDigitado.Length; x++) // Iteração para encontrar todos os espaços da
+                                                                              // frase
+                {
 
-                //if (enderecoDigitado.Substring(x, x + 1).Equals(" ") && enderecoDigitado.Substring(x + 1, x + 2).ToString() == "2")
-                if (enderecoDigitado[x] == ' ' && int.TryParse(enderecoDigitado[x + 1].ToString(), out result))
-                //if (enderecoDigitado[x] == ' ' && enderecoDigitado[x + 1] == '0' || enderecoDigitado[x + 1] == '1' || enderecoDigitado[x + 1] == '2')
-                {
-                    endereco[0] = enderecoDigitado.Substring(0, x).Trim();
-                    numero[0] = enderecoDigitado.Substring(x, enderecoDigitado.Length-x).Trim();
-                    break;
-                }
-                else if (enderecoDigitado[x] == ' ' && int.TryParse(enderecoDigitado[x - 1].ToString(), out result))
-                {
-                    numero[0] = enderecoDigitado.Substring(0, x).Trim();
-                    endereco[0] = enderecoDigitado.Substring(x, enderecoDigitado.Length - x).Trim();
-                    break;
+                    //if (enderecoDigitado.Substring(x, x + 1).Equals(" ") && enderecoDigitado.Substring(x + 1, x + 2).ToString() == "2")
+                    if (enderecoDigitado[x] == ' ' && int.TryParse(enderecoDigitado[x + 1].ToString(), out result))
+                    //if (enderecoDigitado[x] == ' ' && enderecoDigitado[x + 1] == '0' || enderecoDigitado[x + 1] == '1' || enderecoDigitado[x + 1] == '2')
+                    {
+                        endereco[0] = enderecoDigitado.Substring(0, x).Trim();
+                        numero[0] = enderecoDigitado.Substring(x, enderecoDigitado.Length-x).Trim();
+                        break;
+                    }
+                    else if (enderecoDigitado[x] == ' ' && int.TryParse(enderecoDigitado[x - 1].ToString(), out result))
+                    {
+                        numero[0] = enderecoDigitado.Substring(0, x).Trim();
+                        endereco[0] = enderecoDigitado.Substring(x, enderecoDigitado.Length - x).Trim();
+                        break;
+                    }
                 }
             }
+
             label_endereco_saida.Text = endereco[0].Replace(",", "");
             label_numero_saida.Text = numero[0];
         }
